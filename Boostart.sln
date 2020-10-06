@@ -5,13 +5,18 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "WebAPI\WebAPI.csproj", "{F36D508C-073E-451A-BD3B-39E9D0223575}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{2174CAA6-45F6-49D4-9E23-801A9267570F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{2174CAA6-45F6-49D4-9E23-801A9267570F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database.Entity", "Database.Entity\Database.Entity.csproj", "{4108B8CE-B2CB-4E27-AD35-1FADFAC2E28F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database.Entity", "Database.Entity\Database.Entity.csproj", "{4108B8CE-B2CB-4E27-AD35-1FADFAC2E28F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database.Mssql", "Database.Mssql\Database.Mssql.csproj", "{11EA72BE-F0E0-4177-A740-EFE8C5F69816}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database.Mssql", "Database.Mssql\Database.Mssql.csproj", "{11EA72BE-F0E0-4177-A740-EFE8C5F69816}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{DAA59605-D806-4394-813D-B4229D5F92F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{DAA59605-D806-4394-813D-B4229D5F92F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A8A9F830-56C1-4379-8BB1-1123CA3DD714}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
