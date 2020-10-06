@@ -43,8 +43,7 @@ Here are all the things you have to do:
   }
   ```
   > NOTE: 
-  > * the new entity MUST inherit from *BaseEntity*
-  > * 
+  > * the new entity MUST inherit from *BaseEntity* 
 * Step #2. Run any `dotnet ef` command you'd like to update the database;
 * Step #3. Create the new data service class and interface
   ```c#
@@ -85,7 +84,8 @@ As you can see, what you did is just create
 * new entity from BaseEntity
 * new data service from BaseDataService
 * new controller from BaseController
-That's! 
+
+That's it!
 
 You don't have to do too many copy & pastes, so you could just focus on the relationships between the entities and business logic.
 
