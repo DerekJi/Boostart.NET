@@ -12,48 +12,15 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController : BaseController
+    public class UsersController : BaseController<User>
     {
         protected readonly IUsersDataService localUsersDataService;
         public UsersController(
             ILogger<ILogActionFilter> logger, 
             IUsersDataService usersDataService)
-            : base(logger)
-        {
-            localUsersDataService = usersDataService;
-        }
-
-        [HttpGet]
-        [Route("")]
-        public ActionResult FindAll()
-        {
-            var items = localUsersDataService.FindAll();
-            return Ok(items);
-        }
-
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] User payload)
+            : base(logger, usersDataService)
         {
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] User payload)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

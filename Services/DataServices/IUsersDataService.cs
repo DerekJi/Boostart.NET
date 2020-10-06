@@ -4,8 +4,7 @@ using System.Linq;
 
 namespace Services.DataServices
 {
-    public interface IUsersDataService : IBaseService
+    public interface IUsersDataService : IBaseDataService<User>
     {
-        IQueryable<User> FindAll(bool active = true);
     }
 }

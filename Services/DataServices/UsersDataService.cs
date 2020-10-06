@@ -10,21 +10,13 @@ using System.Text;
 
 namespace Services.DataServices
 {
-    public class UsersDataService : BaseService, IUsersDataService
+    public class UsersDataService : BaseDataService<User>, IUsersDataService
     {
-        protected readonly IBaseRepository<User> localRepos;
-
         public UsersDataService(
             IHttpContextAccessor httpContextAccessor,
             IBaseRepository<User> repos
-            ) : base(httpContextAccessor)
+            ) : base(httpContextAccessor, repos)
         {
-            localRepos = repos;
-        }
-
-        public IQueryable<User> FindAll(bool active = true)
-        {
-            return localRepos.FindAll(active);
         }
     }
 }
