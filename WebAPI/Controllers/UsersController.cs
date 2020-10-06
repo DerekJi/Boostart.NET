@@ -14,7 +14,6 @@ namespace WebAPI.Controllers
     [ApiController]
     public class UsersController : BaseController<User>
     {
-        protected readonly IUsersDataService localUsersDataService;
         public UsersController(
             ILogger<ILogActionFilter> logger, 
             IUsersDataService usersDataService)
