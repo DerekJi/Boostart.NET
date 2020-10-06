@@ -4,25 +4,31 @@ using System.Linq;
 using System.Threading.Tasks;
 using Services.DataServices;
 using Microsoft.AspNetCore.Mvc;
+using WebAPI.Utilities.ActionFilters;
+using Microsoft.Extensions.Logging;
+using Database.Entity;
 
 namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class UsersController : BaseController
     {
         protected readonly IUsersDataService localUsersDataService;
-        public UsersController(IUsersDataService vendorsDataService)
+        public UsersController(
+            ILogger<ILogActionFilter> logger, 
+            IUsersDataService usersDataService)
+            : base(logger)
         {
-            localUsersDataService = vendorsDataService;
+            localUsersDataService = usersDataService;
         }
 
         [HttpGet]
         [Route("")]
         public ActionResult FindAll()
         {
-            var vendors = localUsersDataService.FindAll();
-            return Ok(vendors);
+            var items = localUsersDataService.FindAll();
+            return Ok(items);
         }
 
         // GET api/values/5
@@ -34,13 +40,13 @@ namespace WebAPI.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] User payload)
         {
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] User payload)
         {
         }
 

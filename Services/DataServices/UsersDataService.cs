@@ -12,19 +12,19 @@ namespace Services.DataServices
 {
     public class UsersDataService : BaseService, IUsersDataService
     {
-        protected readonly IBaseRepository<User> localUserRepos;
+        protected readonly IBaseRepository<User> localRepos;
 
         public UsersDataService(
             IHttpContextAccessor httpContextAccessor,
-            IBaseRepository<User> userRepos
+            IBaseRepository<User> repos
             ) : base(httpContextAccessor)
         {
-            localUserRepos = userRepos;
+            localRepos = repos;
         }
 
         public IQueryable<User> FindAll(bool active = true)
         {
-            return localUserRepos.FindAll(active);
+            return localRepos.FindAll(active);
         }
     }
 }

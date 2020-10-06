@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WebAPI.Utilities.ActionFilters;
 
 namespace WebAPI
 {
@@ -13,7 +14,8 @@ namespace WebAPI
     {
         public void InejctInfrastructures(IServiceCollection services)
         {
-            //services.AddTransient<ILogActionFilter, NLogActionFilter>();
+            services.AddTransient<ILogActionFilter, NLogActionFilter>();
+            services.AddTransient<IAuthActionFilter, AuthActionFilter>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IBaseService, BaseService>();
@@ -23,7 +25,6 @@ namespace WebAPI
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 
             services.AddTransient<IUsersDataService, UsersDataService>();
-
         }
 
         /// <summary>
