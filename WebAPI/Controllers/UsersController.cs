@@ -17,14 +17,6 @@ namespace WebAPI.Controllers
             localUsersDataService = vendorsDataService;
         }
 
-        // GET api/values
-        [HttpGet]
-        [Route("values")]
-        public ActionResult<IEnumerable<string>> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
         [HttpGet]
         [Route("")]
         public ActionResult FindAll()
